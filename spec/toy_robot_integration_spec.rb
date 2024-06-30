@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'toy_robot'
+require 'command_proccessor'
 require 'json'
 
-RSpec.describe ToyRobot do
+RSpec.describe CommandProcessor do
   let(:case_A) do
     <<~JSON
       [
@@ -85,7 +85,7 @@ RSpec.describe ToyRobot do
   describe 'integration' do
     context 'when there is a move' do
       subject(:result) do
-        json_result = ToyRobot.call(case_A)
+        json_result = CommandProcessor.call(case_A)
         json_result
       end
 
@@ -96,7 +96,7 @@ RSpec.describe ToyRobot do
 
     context 'when there is a turn' do
       subject(:result) do
-        json_result = ToyRobot.call(case_B)
+        json_result = CommandProcessor.call(case_B)
         json_result
       end
 
@@ -107,7 +107,7 @@ RSpec.describe ToyRobot do
 
     context 'when there are multiple turns and moves' do
       subject(:result) do
-        json_result = ToyRobot.call(case_C)
+        json_result = CommandProcessor.call(case_C)
         json_result
       end
 
@@ -118,7 +118,7 @@ RSpec.describe ToyRobot do
 
     context 'when robot is placed at the edge of the table' do
       subject(:result) do
-        json_result = ToyRobot.call(edge_case)
+        json_result = CommandProcessor.call(edge_case)
         json_result
       end
 
@@ -129,7 +129,7 @@ RSpec.describe ToyRobot do
 
     context 'when place is invalid' do
       subject(:result) do
-        json_result = ToyRobot.call(invalid_place)
+        json_result = CommandProcessor.call(invalid_place)
         json_result
       end
 

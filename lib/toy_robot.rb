@@ -13,34 +13,6 @@ class ToyRobot
     @tabletop_height = args[:tabletop_height]
   end
 
-  def self.call(input)
-    new.call(input)
-  end
-
-  def call(input)
-    commands = JSON.parse(input)
-    reports = []
-
-    commands.each do |command|
-      case command['action']
-      when 'PLACE'
-        place(command['x_axis'], command['y_axis'], command['facing'])
-      when 'MOVE'
-        move
-      when 'LEFT'
-        left
-      when 'RIGHT'
-        right
-      when 'REPORT'
-        reports << report
-      else
-        puts "Unknown command: #{command['action']}"
-      end
-    end
-
-    reports.join("\n")
-  end
-
   def place(x_axis = 0, y_axis = 0, facing = 'NORTH')
     return unless valid_position?(x_axis, y_axis)
 
