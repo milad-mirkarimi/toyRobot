@@ -33,14 +33,8 @@ Ruby v3.2.2
 
 ## Usage
 
-Run the application using the following command:
-
-```sh
-ruby bin/toy_robot
-```
-
 ## Integration Tests
-Run the following command to run the sample test cases from the root of the project
+Run the following commands to run the sample test cases from the root of the project
 
 ```sh
 rspec ./spec/toy_robot_integration_spec.rb
@@ -48,5 +42,11 @@ rspec ./spec/toy_robot_integration_spec.rb
 or
 
 ```sh
-rspec bundle exec rspec ./spec/toy_robot_integration_spec.rb
+bundle exec rspec ./spec/toy_robot_integration_spec.rb
+```
+
+Run the application using the following command:
+
+```sh
+ruby lib/toy_robot_app
 ```
