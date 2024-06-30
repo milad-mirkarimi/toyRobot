@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'toy_robot_app'
+require 'toy_robot'
 require 'json'
 
 RSpec.describe ToyRobot do
