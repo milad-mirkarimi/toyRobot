@@ -45,8 +45,8 @@ or
 bundle exec rspec ./spec/toy_robot_integration_spec.rb
 ```
 
-Run the application using the following command:
+Run the application using a sample data:
 
 ```sh
-ruby lib/toy_robot_app
+ruby ./bin/main.rb
 ```
